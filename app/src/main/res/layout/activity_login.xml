@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  tools:context=".features.authentication.login.LoginActivity">
+
+  <androidx.constraintlayout.motion.widget.MotionLayout
+    android:id="@+id/motionLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="32dp"
+    app:layoutDescription="@xml/activity_login_scene">
+
+    <ImageView
+      android:id="@+id/imageViewIcon"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:layout_marginTop="64dp"
+      android:layout_marginBottom="32dp"
+      app:layout_constraintBottom_toTopOf="@+id/inputLayoutUsername"
+      app:layout_constraintDimensionRatio="1:1"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintWidth_percent="0.6"
+      tools:src="@drawable/icon_dicoding"
+      tools:visibility="visible" />
+
+    <ImageView
+      android:id="@+id/imageViewState"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:layout_marginTop="64dp"
+      android:scaleX="0"
+      android:scaleY="0"
+      android:src="@drawable/checked"
+      app:layout_constraintDimensionRatio="1:1"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintWidth_percent="0.6"
+      tools:src="@drawable/checked" />
+
+    <com.google.android.material.textfield.TextInputLayout
+      android:id="@+id/inputLayoutUsername"
+      style="@style/TextInputLayoutFilledStyle"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="32dp"
+      android:layout_marginBottom="16dp"
+      app:layout_constraintBottom_toTopOf="@+id/editTextPassword"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/imageViewIcon"
+      app:layout_constraintVertical_bias="0.8"
+      app:layout_constraintVertical_chainStyle="packed"
+      app:startIconDrawable="@drawable/mail_24px">
+
+      <EditText
+        android:id="@+id/editTextUsername"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:hint="Username"
+        android:inputType="textEmailAddress"
+        tools:text="test@gmail.com" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <id.bazrira.dicoding.intermediate.abstraction.customview.MyEditText
+      android:id="@+id/editTextPassword"
+      style="@style/TextInputLayoutFilledStyle"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="16dp"
+      app:layout_constraintBottom_toTopOf="@+id/buttonLogin"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/inputLayoutUsername"
+      app:startIconDrawable="@drawable/key_24px" />
+
+    <com.google.android.material.button.MaterialButton
+      android:id="@+id/buttonLogin"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="24dp"
+      android:text="Masuk"
+      android:textAllCaps="false"
+      app:layout_constraintBottom_toTopOf="@+id/textViewLogin"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+
+    <com.google.android.material.textview.MaterialTextView
+      android:id="@+id/textViewLogin"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      android:layout_marginEnd="8dp"
+      android:text="Belum punya Akun?"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toStartOf="@+id/textViewRegister"
+      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintHorizontal_chainStyle="packed"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/buttonLogin" />
+
+    <com.google.android.material.textview.MaterialTextView
+      android:id="@+id/textViewRegister"
+      style="@style/TextButtonStyle"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Buat Akun di sini."
+      android:textStyle="bold"
+      app:layout_constraintBottom_toBottomOf="@+id/textViewLogin"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.5"
+      app:layout_constraintStart_toEndOf="@+id/textViewLogin"
+      app:layout_constraintTop_toTopOf="@+id/textViewLogin" />
+  </androidx.constraintlayout.motion.widget.MotionLayout>
+</androidx.core.widget.NestedScrollView>
